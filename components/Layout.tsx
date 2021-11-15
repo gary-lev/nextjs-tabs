@@ -19,7 +19,7 @@ const Layout: FC<Props> = ({ children, ...props }) => {
             <Button color="link" className="text-white d-md-none p-2" onClick={() => setIsOpen(true)}>
               <i className="bi bi-list h4"></i>
             </Button>
-            <Link href="/">
+            <Link href="/" passHref>
               <img src="/nextjs-tabs/images/Lev_Logo_White.svg" alt="Lev Logo" height={50} className="mt-n3" />
             </Link>
             <Input type="search" placeholder="Search" className="w-auto ms-auto bg-transparent text-light" />
@@ -45,7 +45,7 @@ const Layout: FC<Props> = ({ children, ...props }) => {
           )}
         </nav>
 
-        <main className="p-3">
+        <main className="container-xl py-3">
           {children}
         </main>
         <div id="overlay" onClick={() => setIsOpen(false)} />

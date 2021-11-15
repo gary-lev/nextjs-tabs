@@ -17,7 +17,7 @@ const TabPane: FC<TabPaneProps> = ({ children, className, ...props }) => {
       <Nav tabs className={classnames('mb-3', className)} {...props}>
         {children?.map((tab, i) => (
           <NavItem key={i}>
-            <Link href={tab.props.href}>
+            <Link href={tab.props.href} passHref>
               <NavLink active={asPath === tab.props.href}>
                 {tab.props.label}
               </NavLink>

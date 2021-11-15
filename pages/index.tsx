@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import { Button, Card, Col, Row } from 'reactstrap'
 import useDeals from '../hooks/useDeals'
 
@@ -27,8 +28,10 @@ const Home: NextPage = () => {
                 <h4>{deal.name}</h4>
                 {deal.location.city}, {deal.location.state} {deal.location.postcode}
               </Col>
-              <Col sm={3}>
-                <Button color="success" block>Continue</Button>
+              <Col sm={3} className="d-flex">
+                <Link href={`/deals/${deal.id}/lenders`} passHref>
+                  <Button color="success" block className="mt-auto">Continue</Button>
+                </Link>
               </Col>
             </Row>
           </Card>
